@@ -3,93 +3,138 @@ import styles from './page.module.css'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+    <main role="main" className="main-content">
+      <div className="container-fluid">
+        <div className="row justify-content-center">
+          <div className="col-12 col-xl-10">
+            <div className="row align-items-center my-4">
+              <div className="col">
+                <h2 className="h3 mb-0 page-title">Add Contact</h2>
+              </div>
+              <div className="col-auto">
+                <button type="button" className="btn btn-primary">
+                  Save Change
+                </button>
+              </div>
+            </div>
+            <form>
+              <hr className="my-4" />
+              <h5 className="mb-2 mt-4">Personal</h5>
+              <p className="mb-4">
+                Mauris blandit nisl ullamcorper, rutrum metus in, congue lectus
+              </p>
+              <div className="form-row">
+                <div className="form-group col-md-6">
+                  <label htmlFor="firstname">Firstname</label>
+                  <input type="text" id="firstname" className="form-control" />
+                </div>
+                <div className="form-group col-md-6">
+                  <label htmlFor="lastname">Lastname</label>
+                  <input type="text" id="lastname" className="form-control" />
+                </div>
+              </div>
+              <div className="form-row">
+                <div className="form-group col-md-8">
+                  <label htmlFor="inputEmail4">Email</label>
+                  <input type="email" className="form-control" id="inputEmail4" />
+                </div>
+                <div className="form-group col-md-4">
+                  <label htmlFor="inputPhone">Phone</label>
+                  <input type="text" className="form-control" id="inputPhone" />
+                </div>
+              </div>
+              <div className="form-row">
+                <div className="form-group col-md-4">
+                  <label htmlFor="custom-placeholder">Date of Birth</label>
+                  <input
+                    className="form-control input-placeholder"
+                    id="custom-placeholder"
+                    type="text"
+                    name="placeholder"
+                  />
+                </div>
+                <div className="form-group col-md-4">
+                  <label htmlFor="inputState5">Gender</label>
+                  <select id="inputState5" className="form-control">
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                  </select>
+                </div>
+                <div className="form-group col-md-4">
+                  <label htmlFor="inputLang">Language</label>
+                  <select id="inputLang" className="form-control">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                  </select>
+                </div>
+              </div>
+              <hr className="my-4" />
+              <h5 className="mb-2 mt-4">Company</h5>
+              <p className="mb-4">
+                Mauris blandit nisl ullamcorper, rutrum metus in, congue lectus
+              </p>
+              <div className="form-row">
+                <div className="form-group col-md-6">
+                  <label htmlFor="firstname">Company Name</label>
+                  <input type="text" id="firstname" className="form-control" />
+                </div>
+                <div className="form-group col-md-6">
+                  <label htmlFor="lastname">Department</label>
+                  <input type="text" id="lastname" className="form-control" />
+                </div>
+              </div>
+              <div className="form-group">
+                <label htmlFor="inputAddress5">Address</label>
+                <input type="text" className="form-control" id="inputAddress5" />
+              </div>
+              <div className="form-row">
+                <div className="form-group col-md-4">
+                  <label htmlFor="custom-zip">Zip code</label>
+                  <input className="form-control input-zip" id="custom-zip" />
+                </div>
+                <div className="form-group col-md-4">
+                  <label htmlFor="inputState5">Country</label>
+                  <select id="inputState5" className="form-control">
+                    <option value="">Select country...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div className="form-group col-md-4">
+                  <label htmlFor="inputState5">State</label>
+                  <select id="inputState5" className="form-control">
+                    <option  value="">Choose state...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+              </div>
+              <hr className="my-4" />
+              <div className="form-row">
+                <div className="col-md-6">
+                  <div className="custom-control custom-switch">
+                    <input
+                      type="checkbox"
+                      className="custom-control-input"
+                      id="customPass"
+                      defaultChecked
+                    />
+                    <label className="custom-control-label" htmlFor="customPass">
+                      Create account and email generated password
+                    </label>
+                  </div>
+                </div>
+                <div className="col-md-6 text-right">
+                  <button type="button" className="btn btn-primary">
+                    Save Change
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
+  </>
+  
   )
 }
