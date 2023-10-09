@@ -1,5 +1,5 @@
 // data.jsx
-const itemsData = [
+export const sidebarLinks = [
     {
       id: "tableau-de-bord",
       icon: "fe-home",
@@ -54,6 +54,4 @@ const itemsData = [
         link:"/settings"
       },
   ];
-  
-  export default itemsData;
   

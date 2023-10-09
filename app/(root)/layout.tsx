@@ -1,10 +1,10 @@
 
-import './globals.css'
+import '../globals.css'
 import '../../public/asset/css/feather.css'
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Container from '../../components/Container/Container'
+import Container from '@/components/Container/Container'
 
 const inter = Inter({ subsets: ['latin'] })
  

@@ -2,8 +2,8 @@
 
 
 import { useState } from 'react';
-import Navbar from '../Navbar/Navbar'
-import Sidebar from '../Sidebar/Sidebar'
+import Topbar from '../shared/Topbar';
+import LeftSidebar from '../shared/LeftSidebar';
 
 
 function Container({ children }) {
@@ -17,8 +17,8 @@ function Container({ children }) {
     return (
         <body className={`vertical light ${isSidebarCollapsed ? 'collapsed' : ''}`}>
             <div className="wrapper">
-                <Navbar toggleSidebar={toggleSidebar} />
-                <Sidebar />
+                <Topbar toggleSidebar={toggleSidebar} />
+                <LeftSidebar />
                 {children}
             </div>
         </body>
