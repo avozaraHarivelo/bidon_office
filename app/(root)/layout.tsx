@@ -5,6 +5,8 @@ import '../../public/asset/css/feather.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Container from '@/components/Container/Container'
+import { ClientCookiesProvider } from '@/context/CookieProvider'
+import { cookies } from 'next/headers'
 
 const inter = Inter({ subsets: ['latin'] })
  
@@ -20,11 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-     
+      <ClientCookiesProvider value={cookies().getAll()}>
       <Container>
       {children}
       </Container>
-     
+      </ClientCookiesProvider>
     </html>
   )
 }

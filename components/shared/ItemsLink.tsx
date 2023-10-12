@@ -1,4 +1,5 @@
 import { ItemsLinkProps } from '@/types'
+import Link from 'next/link'
 import React from 'react'
 
 export default function ItemsLink({ menuItem, toggleDropdown, isOpen }: ItemsLinkProps) {
@@ -18,18 +19,18 @@ export default function ItemsLink({ menuItem, toggleDropdown, isOpen }: ItemsLin
                             <span className="ml-3 item-text">{menuItem.text}</span>
                         </a>
                     ) : (
-                        <a className="nav-link">
+                        <Link href={menuItem.link} className="nav-link">
                             <i className={`fe ${menuItem.icon} fe-16`} />
                             <span className="ml-3 item-text">{menuItem.text}</span>
-                        </a>
+                        </Link>
                     )}
                     {menuItem.subMenuItems && (
                         <ul className={`list-unstyled pl-4 w-100 collapse  ${isOpen ? 'show' : ''}`}>
                             {menuItem.subMenuItems.map((sub: any, key: any) => (
                                 <li key={key} className="nav-item">
-                                    <a className="nav-link pl-3" >
+                                    <Link href={sub.link}  className="nav-link pl-3" >
                                         <span className="ml-1 item-text">{sub.text}</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

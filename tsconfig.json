@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Container/Container.jsx", "app/(root)/user/[id]"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Container/Container.jsx", "app/(root)/user/current", "services/user.service.js", "services/auth.service.js", "context/AuthProvider.js"],
   "exclude": ["node_modules"]
 }

@@ -4,7 +4,7 @@ export const sidebarLinks = [
       id: "tableau-de-bord",
       icon: "fe-home",
       text: "Tableau de bord",
-      link:"/Dashboard"
+      link:"/"
     },
     {
 
@@ -15,14 +15,20 @@ export const sidebarLinks = [
         {
           id: "list-users",
           text: "Listes",
-          link: "/users",
+          link: "/user",
         },
         {
             id: "profil-user",
             text: "Profil",
-            link: "/user",
+            link: "/user/current",
           },
       ],
+    },
+    {
+      id: "carte-nfc",
+      icon: "fe-home",
+      text: "Carte nfc",
+      link:"/nfc"
     },
     {
       id: "transaction",
@@ -32,12 +38,12 @@ export const sidebarLinks = [
         {
           id: "bidon",
           text: "Bidon",
-          link: "/Bidon",
+          link: "/transaction/bidon",
         },
         {
             id: "token",
             text: "Token",
-            link: "/Token",
+            link: "/transaction/token",
           },
       ],
     },
@@ -51,7 +57,7 @@ export const sidebarLinks = [
         id: "autres",
         icon: "fe-settings",
         text: "Paramètres",
-        link:"/settings"
+        link:"/autres"
       },
   ];
   
