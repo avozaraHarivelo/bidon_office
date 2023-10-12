@@ -1,6 +1,7 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { get as getCompte } from '@/services/compte.service';
 
 export default function Compte() {
 
@@ -8,8 +9,26 @@ export default function Compte() {
         id: { value: '', error: '' },
         login: { value: '', error: '' },
         password: { value: '', error: '' },
-        phoneTelma: { value: '', error: '' },
+        // phoneTelma: { value: '', error: '' },
     });
+
+
+    useEffect(() => {
+        // Effectuez une demande GET pour obtenir les valeurs
+        getCompte(1).then((response) => {
+            const data = response.data;
+            // Mettez à jour l'état avec les valeurs récupérées de l'API
+            setFields({
+              id: { value: data.id, error: '' },
+              login: { value: data.login, error: '' },
+              password: { value: data.password, error: '' },
+            //   phoneTelma: { value: data.phoneTelma, error: '' },
+            });
+          })
+          .catch((error) => {
+           console.log(error)
+          });
+      }, []); 
 
     const handleChange = (e: any) => {
         const { id, value } = e.target;
@@ -47,23 +66,23 @@ export default function Compte() {
             formIsValid = false;
         }
 
-        if (!fields.phoneTelma.value) {
-            setFields({
-                ...fields,
-                phoneTelma: {
-                    ...fields.phoneTelma,
-                    error: 'Le numéro de téléphone est requis',
-                },
-            });
-            formIsValid = false;
-        }
+        // if (!fields.phoneTelma.value) {
+        //     setFields({
+        //         ...fields,
+        //         phoneTelma: {
+        //             ...fields.phoneTelma,
+        //             error: 'Le numéro de téléphone est requis',
+        //         },
+        //     });
+        //     formIsValid = false;
+        // }
 
         if (formIsValid) {
             // Si le formulaire est valide, vous pouvez envoyer la demande
             const data = {
                 login: fields.login.value,
                 password: fields.password.value,
-                phoneTelma: fields.phoneTelma.value,
+                // phoneTelma: fields.phoneTelma.value,
             };
 
             console.log(data);
@@ -114,7 +133,7 @@ export default function Compte() {
                         </div>
                     </div>
 
-                    <div className="form-group row">
+                    {/* <div className="form-group row">
                         <label htmlFor="phoneTelma" className="col-sm-4 col-form-label">Numéro EQIMA (MVOLA)</label>
                         <div className="col-sm-8">
                             <input
@@ -126,7 +145,7 @@ export default function Compte() {
                             />
                             {fields.phoneTelma.error && <div className="text-danger">{fields.phoneTelma.error}</div>}
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="form-group mb-2">
                         <button type="submit" className="btn btn-primary">Modifier</button>

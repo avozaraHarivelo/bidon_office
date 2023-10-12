@@ -1,6 +1,9 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from "@/utils/axios"
+
+import { get as getPrix} from '@/services/prix.service';
 
 export default function Prix() {
     const [fields, setFields] = useState({
@@ -8,6 +11,23 @@ export default function Prix() {
         bidon: { value: '', error: '' },
         loyer: { value: '', error: '' },
     });
+
+    useEffect(() => {
+        console.log(axios.defaults.headers.common)
+        // Effectuez une demande GET pour obtenir les valeurs
+        getPrix(1).then((response) => {
+            const data = response.data;
+            // Mettez à jour l'état avec les valeurs récupérées de l'API
+            setFields({
+              id: { value: 1, error: '' },
+              bidon: { value: data.bidon, error: '' },
+              loyer: { value: data.loyer, error: '' },
+            });
+          })
+          .catch((error) => {
+        //    console.log(error)
+          });
+      }, []); 
 
     const handleChange = (e: any) => {
         const { id, value } = e.target;
