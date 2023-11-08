@@ -5,9 +5,9 @@ import React from 'react'
 export default function ItemsLink({ menuItem, toggleDropdown, isOpen }: ItemsLinkProps) {
     return (
         <>
-            <p className="text-muted nav-heading mt-4 mb-1">
+            {/* <p className="text-muted nav-heading mt-4 mb-1">
                 <span>{menuItem.text}</span>
-            </p>
+            </p> */}
             <ul className="navbar-nav flex-fill w-100 mb-2">
                 <li className="nav-item dropdown">
                     {menuItem.subMenuItems ? (

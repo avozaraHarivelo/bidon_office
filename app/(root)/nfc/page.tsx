@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function association() {
+export default function Nfc() {
   return (
     <main role="main" className="main-content">
     <div className="container-fluid">
@@ -8,7 +8,7 @@ export default function association() {
             <div className="col-12">
                 <div className="row align-items-center my-4">
                     <div className="col">
-                        <h2 className="h3 mb-0 page-title">Liste des associations</h2>
+                        <h2 className="h3 mb-0 page-title">Liste des Nfc</h2>
                     </div>
                     <div className="col-auto">
                         <button type="button" className="btn btn-primary"><span className="fe fe-filter fe-12 mr-2"></span>Creer</button>
@@ -26,10 +26,8 @@ export default function association() {
                                         </div>
                                     </th>
                                     <th>ID</th>
-                                    <th>Nom de l'asscociation</th>
-                                    <th>Téléphone</th>
-                                    <th>Adresse</th>
-                                    <th>Nombres de ses  BF</th>
+                                    <th>Serial ID</th>
+                                    <th>Date d'ajout</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -44,8 +42,6 @@ export default function association() {
                                     <td> </td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
-                                    <td className="text-muted"></td>
                                     <td>
                                         <button className="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <span className="text-muted sr-only">Action</span>

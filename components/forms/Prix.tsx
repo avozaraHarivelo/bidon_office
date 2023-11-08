@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "@/utils/axios"
 
-import { get as getPrix} from '@/services/prix.service';
+import { get as getPrix, update} from '@/services/prix.service';
 
 export default function Prix() {
     const [fields, setFields] = useState({
@@ -13,7 +13,6 @@ export default function Prix() {
     });
 
     useEffect(() => {
-        console.log(axios.defaults.headers.common)
         // Effectuez une demande GET pour obtenir les valeurs
         getPrix(1).then((response) => {
             const data = response.data;
@@ -68,18 +67,17 @@ export default function Prix() {
         if (formIsValid) {
             // Si le formulaire est valide, vous pouvez envoyer la demande
             const data = {
+                id:fields.id.value,
                 bidon: fields.bidon.value,
                 loyer: fields.loyer.value,
             };
             console.log(data);
 
-            //   axios.put('/votre-endpoint-de-mise-à-jour', data)
-            //     .then((response) => {
-            //       // Gérer la réponse ici
-            //     })
-            //     .catch((error) => {
-            //       // Gérer les erreurs ici
-            //     });
+            update(data).then((response) => {
+                console.log(response);
+              }).catch((error) => {
+                // Gérer les erreurs ici
+              });
         }
     };
 
